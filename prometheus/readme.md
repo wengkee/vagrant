@@ -1,7 +1,7 @@
 # Prometheus
 
 ## Introduction
-This Vagrantfile will bootstrap 1 master node and 1 worker node for installing a small Kubernetes cluster.
+This Vagrantfile will bootstrap a server with Prometheus installed.
 
 ## Prerequisites
 - Install [Virtual Box](https://www.virtualbox.org/)
