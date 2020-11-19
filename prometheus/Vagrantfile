@@ -1,0 +1,16 @@
+Vagrant.configure("2") do |config|
+
+  # my choice, feel free to change to other OS
+  config.vm.box = "centos/7"
+
+  # script ran during vagrant up
+  config.vm.provision :shell, path: "init.sh"
+
+  # forwarding Prometheus port to localhost:9090
+  config.vm.network :forwarded_port, guest: 9090, host: 9090
+
+  # defining so that we can scrape host at 60.60.60.1
+  # feel free to change this ip but avoid .0 and .1
+  # former is for broadcasting and latter is for host
+  config.vm.network :private_network, ip: "60.60.60.2"
+end
